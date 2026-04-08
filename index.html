@@ -32,10 +32,11 @@
             color: var(--text);
             transition: background 0.3s, color 0.3s;
             line-height: 1.6;
+            scroll-behavior: smooth;
         }
 
         header {
-            padding: 1.2rem 5%;
+            padding: 1rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -48,11 +49,11 @@
         }
 
         nav a {
-            margin-left: 20px;
+            margin-left: 15px;
             text-decoration: none;
             color: white;
             font-weight: 500;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         .theme-toggle {
@@ -86,8 +87,29 @@
         
         .card:hover { transform: translateY(-5px); }
 
+        /* Highlight Style for 'My Research' */
+        .my-research-card {
+            border: 1px solid var(--accent);
+            border-left: 5px solid var(--accent);
+            background: rgba(0, 229, 255, 0.03);
+        }
+
         h1, h2 { color: var(--primary); border-left: 5px solid var(--accent); padding-left: 15px; }
-        h3 { color: var(--primary); margin-top: 0; font-size: 1.1rem; border-bottom: 1px solid rgba(0,229,255,0.2); padding-bottom: 5px;}
+        h3 { color: var(--primary); margin-top: 0; font-size: 1.1rem; }
+
+        .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 16px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .btn:hover { background: var(--accent); color: var(--nav-bg); }
 
         .equation-box {
             background: rgba(121, 134, 203, 0.1);
@@ -98,13 +120,6 @@
             text-align: center;
         }
 
-        .profile-info {
-            background: var(--card-bg);
-            border: 1px solid var(--primary);
-            padding: 2rem;
-            border-radius: 12px;
-        }
-
         footer { 
             text-align: center; 
             padding: 2rem; 
@@ -112,17 +127,16 @@
             color: white; 
             margin-top: 4rem; 
         }
-
-        small { color: var(--accent); font-weight: bold; }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo"><strong>SHOURYA.ADHIKARY</strong><span style="color: var(--accent)">.MATH</span></div>
+        <div class="logo"><strong>S.ADHIKARY</strong><span style="color: var(--accent)">.MATH</span></div>
         <nav>
             <a href="#home">Home</a>
-            <a href="#research">Research</a>
+            <a href="#my-research">My Research</a>
+            <a href="#fields">Fields</a>
             <a href="#olympiads">Olympiads</a>
             <a href="#chess">Chess</a>
             <a href="#about">About</a>
@@ -134,53 +148,39 @@
         <h1>Mathematical Perspectives</h1>
         <p>A digital archive for formal research, competitive strategy, and the aesthetics of pure logic.</p>
         <div class="equation-box">
-            The Fundamental Theorem of Calculus:
-            $$ \int_{a}^{b} f(x) dx = F(b) - F(a) $$
+            $$ \text{Ric} - \frac{1}{2}Rg + \Lambda g = \frac{8\pi G}{c^4}T $$
         </div>
     </section>
 
-    <section id="research">
-        <h2>Mathematics Research</h2>
+    <section id="my-research">
+        <h2>My Research</h2>
+        <p>Manuscripts, pre-prints, and formal academic papers.</p>
         <div class="grid">
-            <div class="card">
-                <h3>Geometry</h3>
-                <p>Differential geometry of curves and surfaces. Gaussian curvature and manifolds.</p>
-                <small>$$ K = \frac{R_{1212}}{g_{11}g_{22} - g_{12}^2} $$</small>
+            <div class="card my-research-card">
+                <h3>Paper Title Goes Here</h3>
+                <p><em>Abstract:</em> A brief summary of your research findings, the methodology used, and the mathematical implications.</p>
+                <a href="your-paper.pdf" class="btn">Download PDF</a>
             </div>
-            <div class="card">
-                <h3>Number Theory</h3>
-                <p>Prime distribution, modular arithmetic, and Diophantine equations.</p>
-                <small>$$ a^n + b^n = c^n \text{ for } n > 2? $$</small>
             </div>
-            <div class="card">
-                <h3>Abstract Algebra</h3>
-                <p>Group theory, Ring theory, and Field extensions. Galios theory applications.</p>
-                <small>$$ G/N \cong \text{im}(\phi) $$</small>
-            </div>
-            <div class="card">
-                <h3>Combinatorics & Graph Theory</h3>
-                <p>Extremal graph theory, Ramsey numbers, and enumeration techniques.</p>
-                <small>$$ V - E + F = 2 $$</small>
-            </div>
-            <div class="card">
-                <h3>Probability & Statistics</h3>
-                <p>Stochastic processes, Bayesian inference, and limit theorems.</p>
-                <small>$$ P(A|B) = \frac{P(B|A)P(A)}{P(B)} $$</small>
-            </div>
-            <div class="card">
-                <h3>Measure & Ergodic Theory</h3>
-                <p>Lebesgue measure, Borel sets, and dynamical systems over time.</p>
-                <small>$$ \int_{X} f d\mu = \lim_{n \to \infty} \frac{1}{n} \sum_{k=0}^{n-1} f(T^k x) $$</small>
-            </div>
+    </section>
+
+    <section id="fields">
+        <h2>Mathematical Fields</h2>
+        <div class="grid">
+            <div class="card"><h3>Geometry</h3><p>Gaussian curvature and manifolds.</p></div>
+            <div class="card"><h3>Number Theory</h3><p>Prime distribution and congruences.</p></div>
+            <div class="card"><h3>Abstract Algebra</h3><p>Group theory and Field extensions.</p></div>
+            <div class="card"><h3>Combinatorics</h3><p>Extremal graph theory and Ramsey numbers.</p></div>
+            <div class="card"><h3>Probability</h3><p>Stochastic processes and limit theorems.</p></div>
+            <div class="card"><h3>Measure Theory</h3><p>Lebesgue integration and Borel sets.</p></div>
         </div>
     </section>
 
     <section id="olympiads">
         <h2>Mathematical Olympiads</h2>
-        <div class="card" style="border-left: 4px solid var(--accent); border-bottom: none;">
+        <div class="card" style="border-left: 4px solid var(--accent);">
             <p>Advanced problem solving for IMO/Putnam levels. Focus on Functional Equations and Inequalities.</p>
-            <p><strong>AM-GM Inequality:</strong></p>
-            $$ \frac{x_1 + x_2 + \cdots + x_n}{n} \geq \sqrt[n]{x_1 x_2 \cdots x_n} $$
+            $$ \sum_{i=1}^n \frac{x_i}{w_i} \geq \frac{(\sum x_i)^2}{\sum w_i x_i} $$
         </div>
     </section>
 
@@ -188,25 +188,21 @@
         <h2>Chess & Recreations</h2>
         <div class="grid">
             <div class="card">
-                <h3>Chess Theory</h3>
-                <p>Mathematical evaluation of space, tempo, and piece coordination in the middlegame.</p>
+                <h3>Endgame Theory</h3>
+                <p>Analyzing the mathematical complexity of Tablebases.</p>
             </div>
             <div class="card">
-                <h3>Game Recreations</h3>
-                <p>Logic puzzles involving tiling, coloring arguments, and invariant theory.</p>
+                <h3>Logic Recreations</h3>
+                <p>Tiling problems and parity-based proofs.</p>
             </div>
         </div>
     </section>
 
     <section id="about">
         <h2>About Me</h2>
-        <div class="profile-info">
-            <p style="font-size: 1.2rem; margin-bottom: 10px;"><strong>Shourya Adhikary</strong></p>
-            <p><strong>Institution:</strong> St. Xavier's College, Kolkata</p>
-            <p><strong>Department:</strong> MTMA (Mathematics)</p>
-            <p><strong>Roll Number:</strong> 0063</p>
-            <hr style="border-color: var(--accent); opacity: 0.3; margin: 20px 0;">
-            <p>Dedicated to the rigorous exploration of mathematical structures and their interconnectedness.</p>
+        <div style="background: var(--card-bg); border: 1px solid var(--primary); padding: 2rem; border-radius: 12px;">
+            <p><strong>Shourya Adhikary</strong></p>
+            <p>St. Xavier's College, Kolkata | MTMA (Mathematics) | Roll: 0063</p>
         </div>
     </section>
 

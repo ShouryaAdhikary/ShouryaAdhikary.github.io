@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Mathematical Hub | Shourya Adhikary</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        :root {
+            --primary: #7986cb; /* Light Indigo */
+            --accent: #00e5ff;  /* Cyan */
+            --bg: #fcfcfd;
+            --text: #283593;
+            --card-bg: #ffffff;
+            --nav-bg: #7986cb;
+        }
+
+        [data-theme="dark"] {
+            --bg: #1a1c2c;
+            --text: #e8eaf6;
+            --card-bg: #282c44;
+            --primary: #9fa8da;
+            --nav-bg: #121420;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            transition: background 0.3s, color 0.3s;
+            line-height: 1.7;
+        }
+
+        header {
+            padding: 1.2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--nav-bg);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .theme-toggle {
+            cursor: pointer;
+            padding: 6px 14px;
+            border: 2px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            border-radius: 4px;
+            font-weight: bold;
+            margin-left: 20px;
+        }
+
+        section { padding: 4rem 10%; }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            border-bottom: 4px solid var(--primary);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        h1, h2 { color: var(--primary); border-left: 5px solid var(--accent); padding-left: 15px; }
+
+        .equation-box {
+            background: rgba(121, 134, 203, 0.1);
+            border: 1px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .profile-info {
+            background: var(--card-bg);
+            border: 1px solid var(--primary);
+            padding: 2rem;
+            border-radius: 12px;
+        }
+
+        footer { 
+            text-align: center; 
+            padding: 2rem; 
+            background: var(--nav-bg); 
+            color: white; 
+            margin-top: 4rem; 
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo"><strong>S.ADHIKARY</strong><span style="color: var(--accent)">.MATH</span></div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#research">Research</a>
+            <a href="#olympiads">Olympiads</a>
+            <a href="#chess">Chess</a>
+            <a href="#about">About</a>
+            <button class="theme-toggle" onclick="toggleTheme()">MODE</button>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h1>Mathematical Perspectives</h1>
+        <p>Welcome to my digital repository for mathematical theory, problem-solving techniques, and logical recreations.</p>
+        <div class="equation-box">
+            The General Form of the Fourier Transform:
+            $$ \hat{f}(\xi) = \int_{-\infty}^{\infty} f(x) e^{-2\pi i x \xi} dx $$
+        </div>
+    </section>
+
+    <section id="research">
+        <h2>Mathematics Research</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Analysis & Topology</h3>
+                <p>Exploring the convergence properties of sequences within various metric spaces.</p>
+            </div>
+            <div class="card">
+                <h3>Linear Algebra</h3>
+                <p>Applications of spectral theorem in quantum mechanics and data dimensionality.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="olympiads">
+        <h2>Mathematical Olympiads</h2>
+        <div class="card" style="border-left: 4px solid var(--accent); border-bottom: none;">
+            <p>Problem sets and elegant solutions for high-level competitions.</p>
+            <p><strong>Cauchy-Schwarz Inequality:</strong></p>
+            $$ \left( \sum_{i=1}^n a_i b_i \right)^2 \leq \left( \sum_{i=1}^n a_i^2 \right) \left( \sum_{i=1}^n b_i^2 \right) $$
+        </div>
+    </section>
+
+    <section id="chess">
+        <h2>Chess & Recreations</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Positional Analysis</h3>
+                <p>Applying mathematical logic to evaluate static advantages in the endgame.</p>
+            </div>
+            <div class="card">
+                <h3>Recreational Logic</h3>
+                <p>Exploring the "Mutilated Chessboard" problem and parity-based proofs.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="profile-info">
+            <p style="font-size: 1.2rem; margin-bottom: 10px;"><strong>I am Shourya Adhikary</strong></p>
+            <p><strong>Institution:</strong> St. Xavier's College, Kolkata</p>
+            <p><strong>Department:</strong> MTMA (Mathematics)</p>
+            <p><strong>Roll Number:</strong> 0063</p>
+            <hr style="border-color: var(--accent); opacity: 0.3; margin: 20px 0;">
+            <p>For academic inquiries or collaboration on mathematical projects, please reach out via the contact channels.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Shourya Adhikary | St. Xavier's College</p>
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme');
+            if (currentTheme === 'dark') {
+                body.setAttribute('data-theme', 'light');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+            }
+        }
+    </script>
+</body>
+</html>
